@@ -84,3 +84,4 @@
 - Garbage collection
 - Prisma
 
+- ```<> </>``` Don't work as i expect in react
