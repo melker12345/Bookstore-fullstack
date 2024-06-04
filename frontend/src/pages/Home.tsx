@@ -37,7 +37,7 @@ const Home: React.FC = () => {
     <>
       <main className="min-h-screen">
         {isLargeScreen ? (
-          <section className="bg-gray-100 mt-8 py-12 md:py-20 flex justify-center mx-auto">
+          <section className="bg-gray-100 py-12 md:py-20 flex justify-center mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mx-auto w-auto">
               <div className="space-y-4">
                 <h1 className="text-3xl font-bold tracking-tight md:text-4xl">

@@ -19,6 +19,7 @@ const AdminDashboard: React.FC = () => {
 
   const fetchData = async (
     endpoint: string,
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     setState: React.Dispatch<React.SetStateAction<any[]>>
   ) => {
     try {

@@ -38,8 +38,8 @@ const AddProductForm: React.FC<ProductFormProps> = ({ onProductAdded }) => {
       setDescription('');
       setPrice('');
       setImageUrl('');
-    } catch (error) {
-      console.error(error);
+    } catch {
+      console.log('Failed to add product');
     }
   };
 

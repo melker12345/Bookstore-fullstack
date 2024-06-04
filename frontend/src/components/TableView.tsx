@@ -1,3 +1,4 @@
+import React from 'react';
 import { useState } from 'react';
 import { BaseItem, OrderedItem, FeatureItem } from '../types/types';
 
@@ -16,6 +17,7 @@ const TableView = <T extends BaseItem>({
 }: TableViewProps<T>) => {
   const [expanded, setExpanded] = useState(true);
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const renderValue = (key: string, value: any) => {
     if (key === 'orderedItems' && Array.isArray(value)) {
       return (

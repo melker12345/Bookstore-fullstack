@@ -14,24 +14,19 @@
     }
   },
   "settings": {
-    "react": {
-      "version": "detect"
-    }
+    
   },
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:react/recommended",
-    "plugin:react-hooks/recommended",
     "plugin:prettier/recommended"
   ],
-  "plugins": ["@typescript-eslint", "react", "react-hooks", "prettier"],
+  "plugins": ["@typescript-eslint", "prettier"],
   "rules": {
     "prettier/prettier": [
       "error",
       { "singleQuote": true, "endOfLine": "auto" }
     ],
-    "react/prop-types": "off",
     "@typescript-eslint/no-unused-vars": [
       "error",
       { "argsIgnorePattern": "^_" }
@@ -39,7 +34,13 @@
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "@typescript-eslint/no-explicit-any": "error",
     "no-console": "warn",
-    "no-debugger": "warn"
+    "no-debugger": "warn",
+    "@typescript-eslint/ban-ts-comment": [
+      "warn",
+      {
+        "ts-ignore": "allow-with-description"
+      }
+    ]
   },
   "overrides": [
     {

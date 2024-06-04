@@ -68,7 +68,7 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav className="bg-white shadow-md text-gray-800 p-4 flex justify-between items-center">
+    <nav className="bg-white shadow-md text-gray-800 p-4 flex justify-between items-center z-10">
       <div className="flex items-center space-x-4">
         <div className="h-8 w-8 bg-gray-800 rounded-full"></div>
         <div className="hidden md:flex space-x-4">

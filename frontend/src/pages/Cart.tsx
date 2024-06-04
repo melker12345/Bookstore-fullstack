@@ -150,8 +150,6 @@ const Cart: React.FC = () => {
       payment_method: paymentMethod,
     };
 
-    console.log('Placing order with data:', orderData);
-
     try {
       const response = await fetch('http://localhost:5000/api/orders', {
         method: 'POST',
@@ -160,15 +158,11 @@ const Cart: React.FC = () => {
       });
 
       const textResponse = await response.text();
-      console.log('Raw response:', textResponse);
 
       if (!response.ok) {
         console.error('Failed to place order:', textResponse);
         return;
       }
-
-      const jsonResponse = JSON.parse(textResponse);
-      console.log('JSON response:', jsonResponse);
 
       localStorage.removeItem('cartItems');
 
@@ -188,7 +182,7 @@ const Cart: React.FC = () => {
           className="my-16 w-80"
         />
         <p className="mb-4">
-          Looks like you haven't added anything to your cart yet.
+          Looks like you haven`t added anything to your cart yet.
         </p>
         <Link
           to="/products"
@@ -201,7 +195,7 @@ const Cart: React.FC = () => {
   }
 
   return (
-    <div className="container mx-auto flex items-center justify-center px-4 md:px-6 py-12 min-h-screen">
+    <div className="container mx-auto flex items-center justify-center px-4 md:px-6 min-h-full">
       <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto my-auto py-12 px-4">
         <div className="space-y-6 py-6 px-8 rounded-2xl shadow-xl border">
           <h1 className="text-3xl font-bold">Your Cart</h1>

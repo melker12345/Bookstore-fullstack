@@ -1,13 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-  Navigate,
-} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { User } from './types/types';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import Banner from './components/Banner';
 
 import Home from './pages/Home';
 import About from './pages/About';
@@ -18,6 +14,7 @@ import Admin from './pages/Admin';
 import { AuthProvider } from './components/AuthContext';
 
 const App: React.FC = () => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [user, setUser] = useState<User | null>(null);
 
   useEffect(() => {
@@ -32,6 +29,8 @@ const App: React.FC = () => {
       <Router>
         <div className="flex flex-col min-h-screen">
           <Navbar />
+          <Banner />
+
           <main className="flex-grow">
             <Routes>
               <Route path="/" element={<Home />} />

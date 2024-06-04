@@ -21,6 +21,8 @@ const LoginComponent: React.FC<LoginComponentProps> = ({
     try {
       const user = await login(email, password);
       onSuccess(user);
+
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (err: any) {
       setError(err.message);
     }
@@ -70,7 +72,7 @@ const LoginComponent: React.FC<LoginComponentProps> = ({
       </form>
       {error && <p className="mt-2 text-sm text-red-600">{error}</p>}
       <p className="mt-2 text-sm">
-        Don't have an account?{' '}
+        Don`t have an account?{' '}
         <button
           type="button"
           onClick={onSwitchToSignup}

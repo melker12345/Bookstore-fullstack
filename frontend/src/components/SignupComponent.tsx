@@ -17,6 +17,7 @@ const SignupComponent: React.FC<{ onSwitchToLogin: () => void }> = ({
     try {
       await signup(email, password, name);
       setShowSuccessModal(true);
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (err: any) {
       setError(err.message);
     }

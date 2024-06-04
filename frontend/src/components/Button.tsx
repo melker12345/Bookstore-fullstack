@@ -17,7 +17,7 @@ const Button: React.FC<ButtonProps> = ({ option, text, product }) => {
     if (!product) return;
 
     const storedCartItems = localStorage.getItem('cartItems');
-    let cartItems: Product[] = storedCartItems
+    const cartItems: Product[] = storedCartItems
       ? JSON.parse(storedCartItems)
       : [];
 
