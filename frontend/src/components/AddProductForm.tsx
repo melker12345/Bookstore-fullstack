@@ -21,7 +21,7 @@ const AddProductForm: React.FC<ProductFormProps> = ({ onProductAdded }) => {
     };
 
     try {
-      const response = await fetch('http://localhost:5000/api/products', {
+      const response = await fetch('https://bookstore-fullstack-server.onrender.com/api/products', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

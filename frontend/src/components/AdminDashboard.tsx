@@ -23,7 +23,7 @@ const AdminDashboard: React.FC = () => {
     setState: React.Dispatch<React.SetStateAction<any[]>>
   ) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/${endpoint}`);
+      const response = await fetch(`https://bookstore-fullstack-server.onrender.com/api/${endpoint}`);
       if (!response.ok) {
         throw new Error(`Failed to fetch ${endpoint}`);
       }
@@ -41,7 +41,7 @@ const AdminDashboard: React.FC = () => {
 
   const deleteItem = async (endpoint: string, id: number) => {
     try {
-      await fetch(`http://localhost:5000/api/${endpoint}/${id}`, {
+      await fetch(`https://bookstore-fullstack-server.onrender.com/api/${endpoint}/${id}`, {
         method: 'DELETE',
       });
       fetchData(endpoint, (data) => {
@@ -78,7 +78,7 @@ const AdminDashboard: React.FC = () => {
     setProducts(updatedProducts);
 
     try {
-      await axios.put(`http://localhost:5000/api/products/${productId}`, {
+      await axios.put(`https://bookstore-fullstack-server.onrender.com/api/products/${productId}`, {
         [feature]: !products.find((product) => product.id === productId)?.[
           feature
         ],

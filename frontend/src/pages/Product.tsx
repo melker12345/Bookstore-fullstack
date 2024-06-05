@@ -16,7 +16,7 @@ const ProductPage: React.FC = () => {
     const fetchProduct = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/api/products/${id}`
+          `https://bookstore-fullstack-server.onrender.com/api/products/${id}`
         );
         setProduct(response.data);
       } catch (error) {

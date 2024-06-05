@@ -8,7 +8,7 @@ const ProductList: React.FC = () => {
 
   useEffect(() => {
     axios
-      .get('http://localhost:5000/api/products')
+      .get('https://bookstore-fullstack-server.onrender.com/api/products')
       .then((response) => {
         setProducts(response.data);
       })

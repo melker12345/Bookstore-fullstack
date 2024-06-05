@@ -15,21 +15,6 @@ const Navbar: React.FC = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement | null>(null);
 
-  useEffect(() => {
-    const token = localStorage.getItem('token');
-    if (token) {
-      axios
-        .get<User>('http://localhost:5000/api/users/me', {
-          headers: { Authorization: `Bearer ${token}` },
-        })
-        .then((response) => {
-          setUser(response.data);
-        })
-        .catch(() => {
-          localStorage.removeItem('token');
-        });
-    }
-  }, []);
 
   useEffect(() => {
     const handleOutsideClick = (event: MouseEvent) => {
@@ -44,7 +29,6 @@ const Navbar: React.FC = () => {
 
   const handleLogout = () => {
     setUser(null);
-    localStorage.removeItem('token');
   };
 
   const handleLogin = (user: User) => {
