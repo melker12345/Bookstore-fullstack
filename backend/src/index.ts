@@ -13,7 +13,7 @@ const app = express();
 const port = process.env.PORT || 4000;
 
 const corsOptions = {
-  origin: process.env.BASE_URL , 
+  origin: 'https://bookstore-fullstack-w6e9.onrender.com/', 
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true,
   optionsSuccessStatus: 204
