@@ -12,7 +12,7 @@ const useProducts = () => {
     const fetchProducts = async () => {
       try {
         const response = await axios.get<Product[]>(
-          'http://localhost:5000/api/products'
+          'https://bookstore-fullstack-server.onrender.com/api/products'
         );
         const productsWithDate = response.data.map((product) => ({
           ...product,
