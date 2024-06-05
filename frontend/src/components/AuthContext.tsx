@@ -45,11 +45,14 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     password: string,
     name: string
   ): Promise<void> => {
-    const response = await fetch('http://localhost:5000/api/users/signup', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email, password, name }),
-    });
+    const response = await fetch(
+      'https://bookstore-fullstack-server.onrender.com/api/users/signup',
+      {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password, name }),
+      }
+    );
     const data = await response.json();
     if (response.ok) {
       setAuthState({ user: data, isAdmin: data.isAdmin });

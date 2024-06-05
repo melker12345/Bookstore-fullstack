@@ -24,7 +24,6 @@ const ProductList: React.FC = () => {
           <ProductCard key={product.id} product={product} />
         ))}
       </section>
-
     </>
   );
 };
