@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { FaCartPlus } from 'react-icons/fa';
 import { User } from '../types/types';
-import axios from 'axios';
 import LoginComponent from './LoginComponent';
 import SignupComponent from './SignupComponent';
 import Modal from './Modal';
@@ -14,7 +13,6 @@ const Navbar: React.FC = () => {
   const [user, setUser] = useState<User | null>(null);
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement | null>(null);
-
 
   useEffect(() => {
     const handleOutsideClick = (event: MouseEvent) => {

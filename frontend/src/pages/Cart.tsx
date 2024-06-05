@@ -151,11 +151,14 @@ const Cart: React.FC = () => {
     };
 
     try {
-      const response = await fetch('https://bookstore-fullstack-server.onrender.com/api/orders', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(orderData),
-      });
+      const response = await fetch(
+        'https://bookstore-fullstack-server.onrender.com/api/orders',
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(orderData),
+        }
+      );
 
       const textResponse = await response.text();
 

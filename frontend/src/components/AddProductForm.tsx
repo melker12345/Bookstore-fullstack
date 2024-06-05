@@ -21,13 +21,16 @@ const AddProductForm: React.FC<ProductFormProps> = ({ onProductAdded }) => {
     };
 
     try {
-      const response = await fetch('https://bookstore-fullstack-server.onrender.com/api/products', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(newProduct),
-      });
+      const response = await fetch(
+        'https://bookstore-fullstack-server.onrender.com/api/products',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(newProduct),
+        }
+      );
 
       if (!response.ok) {
         throw new Error('Failed to add product');

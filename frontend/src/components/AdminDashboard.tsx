@@ -23,7 +23,9 @@ const AdminDashboard: React.FC = () => {
     setState: React.Dispatch<React.SetStateAction<any[]>>
   ) => {
     try {
-      const response = await fetch(`https://bookstore-fullstack-server.onrender.com/api/${endpoint}`);
+      const response = await fetch(
+        `https://bookstore-fullstack-server.onrender.com/api/${endpoint}`
+      );
       if (!response.ok) {
         throw new Error(`Failed to fetch ${endpoint}`);
       }
@@ -41,9 +43,12 @@ const AdminDashboard: React.FC = () => {
 
   const deleteItem = async (endpoint: string, id: number) => {
     try {
-      await fetch(`https://bookstore-fullstack-server.onrender.com/api/${endpoint}/${id}`, {
-        method: 'DELETE',
-      });
+      await fetch(
+        `https://bookstore-fullstack-server.onrender.com/api/${endpoint}/${id}`,
+        {
+          method: 'DELETE',
+        }
+      );
       fetchData(endpoint, (data) => {
         switch (endpoint) {
           case 'products':
@@ -78,11 +83,14 @@ const AdminDashboard: React.FC = () => {
     setProducts(updatedProducts);
 
     try {
-      await axios.put(`https://bookstore-fullstack-server.onrender.com/api/products/${productId}`, {
-        [feature]: !products.find((product) => product.id === productId)?.[
-          feature
-        ],
-      });
+      await axios.put(
+        `https://bookstore-fullstack-server.onrender.com/api/products/${productId}`,
+        {
+          [feature]: !products.find((product) => product.id === productId)?.[
+            feature
+          ],
+        }
+      );
     } catch (error) {
       console.error('Failed to update product feature', error);
     }
