@@ -8,7 +8,7 @@ dotenv.config();
 const router = Router();
 
 // Get all users
-router.get(`${process.env.BASE_URL}/`, async (req, res) => {
+router.get('/', async (req, res) => {
   try {
     const users = await prisma.user.findMany();
     res.json(users);
@@ -18,7 +18,7 @@ router.get(`${process.env.BASE_URL}/`, async (req, res) => {
 });
 
 // Get user by ID
-router.get(`${process.env.BASE_URL}/:id`, async (req, res) => {
+router.get('/:id', async (req, res) => {
   const { id } = req.params;
   try {
     const user = await prisma.user.findUnique({
@@ -35,7 +35,7 @@ router.get(`${process.env.BASE_URL}/:id`, async (req, res) => {
 });
 
 // Create a new user
-router.post(`${process.env.BASE_URL}/signup`, async (req, res) => {
+router.post('/signup', async (req, res) => {
   const { email, password, name } = req.body;
 
   if (!email || !password || !name) {
@@ -60,7 +60,7 @@ router.post(`${process.env.BASE_URL}/signup`, async (req, res) => {
 });
 
 // Login user
-router.post(`${process.env.BASE_URL}/login`, async (req, res) => {
+router.post('/login', async (req, res) => {
   const { email, password } = req.body;
   try {
     const user = await prisma.user.findUnique({ where: { email } });
@@ -75,7 +75,7 @@ router.post(`${process.env.BASE_URL}/login`, async (req, res) => {
 });
 
 // Delete a user
-router.delete(`${process.env.BASE_URL}/:id`, async (req, res) => {
+router.delete('/:id', async (req, res) => {
   const { id } = req.params;
   try {
     const user = await prisma.user.delete({
