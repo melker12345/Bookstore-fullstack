@@ -13,9 +13,7 @@
       "jsx": true
     }
   },
-  "settings": {
-    
-  },
+  "settings": {},
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
